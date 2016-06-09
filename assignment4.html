@@ -42,6 +42,7 @@
 		<div>
 			<label>Birthday:</label>
 			<select name="month">
+			<!-- By default, if nothing is select  -->
 				<option value="jan">Month</option>
 				<option value="jan">Jan</option>
 				<option value="feb">Feb</option>
@@ -134,7 +135,7 @@
 		
 		<div>
 			<label for="agreed">I agree to the terms and conditions</label>
-			<input type="checkbox" name="agreed" id="agreed">
+			<input type="checkbox" name="agreed" id="agreed" required title="You must agree to the terms and conditions in order to proceed.">
 		</div>
 
 		<input type="submit">
