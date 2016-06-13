@@ -1,0 +1,48 @@
+.blogContent {
+	margin: 0 auto;
+	width: 50%;
+	border: 20px solid #999999;
+	background: white;
+}
+
+.postDate {
+	/*Adjust this color ASAP*/
+	color: #3498db;
+	font-size: 14px;
+	margin: 2.5% 0 0 0;
+	text-transform: uppercase;
+	font-family: 'Lato', sans-serif;
+	font-weight: 700;
+}
+
+.post p{
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 15px;
+ 	color: rgba(18, 25, 28, 1);
+ 	margin: 2% 0;
+ 	text-align: justify;
+}
+
+.post p:nth-of-type(1) {
+	border-left: 3px solid #999999;
+	padding-left: 1.5%;
+}
+
+.blogPost {
+	margin: 1.5% 5% 3% 5%;
+	border-bottom: 1px solid #999999;
+}
+
+.postTitle {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 33px;
+	margin-top: 2.5%;
+	margin-bottom: 1%;
+	font-weight: 900;
+	color: rgba(65, 80, 100, 1);
+}
+
+body {
+	background-image: url("background.jpg");
+	background-repeat: no-repeat;
+}
