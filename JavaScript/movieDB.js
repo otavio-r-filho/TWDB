@@ -19,9 +19,9 @@ var movies = [
 		rating: 3.5,
 		hasWatched: false
 	}
-]
+];
 
-for(var i = 0; i < movies.length; i++) {
+for (var i = 0; i < movies.length; i++) {
 	var msg = "You have ";
 	if(!movies[i].hasWatched) {
 		msg = msg + "not ";
