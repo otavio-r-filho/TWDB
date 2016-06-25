@@ -5,13 +5,39 @@ body {
 
 .game-menu {
 	background: white;
-	padding-left: 25%;
-	padding-right: 25%;
-	margin-top: 0px;
+	padding-left: 26%;
+	padding-right: 26%;
+	margin: 0 auto;
+	height: 60px;
+	color: rgb(110, 110, 240);
+	font-size: 18px;
+}
+
+.menu-item {
+	float: left;
+	text-transform: uppercase;
+}
+
+.menu-left {
+	width: 50%;
+}
+
+.menu-center {
+	width: 50%;
+	margin: 0 25%;
+	text-align: center;
+}
+
+.menu-right {
+	width: 50%;
+	text-align: right;
 }
 
 .menu-section {
-	
+	padding-top: 2px;
+	padding-bottom: 2px;
+	width: 33%;
+	float: left;
 }
 
 .square {
@@ -28,9 +54,14 @@ body {
 	width: 50%;
 }
 
+.selected {
+	background: background: rgb(110, 110, 240);
+	color: white;
+}
+
 #page-head {
 	text-transform: uppercase;
-	font-size: 23px;
+	font-size: 28px;
 	background: rgb(110, 110, 240);
 	color: white;
 	padding-top: 10px;
@@ -46,6 +77,5 @@ body {
 }
 
 .right-color {
-	font-size: 2.5em;
-	font-weight: 600;
+	font-size: 2.1em;
 }
