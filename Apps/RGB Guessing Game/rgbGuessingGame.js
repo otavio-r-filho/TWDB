@@ -5,6 +5,11 @@ var pickedColor = pickRandomColor();
 var squares = document.querySelectorAll(".square");
 var pickedColorText = document.querySelector(".right-color");
 var gameMessage = document.querySelector("#game-message");
+var pageHead = document.querySelector(".page-head");
+
+var newColorBtn = document.querySelector("#new-color");
+var easyModeBtn = document.querySelector("#easy-mode");
+var hardModeBtn = document.querySelector("#hard-mode");
 
 pickedColorText.textContent = pickedColor;
 
@@ -14,15 +19,57 @@ for (var i = 0; i < colors.length; i++) {
 	squares[i].addEventListener("click", function() {
 		var squareColor = this.style.background;
 		if(squareColor === pickedColor) {
-			gameMessage.textContent = "Winner!";
-			for (var j = 0; j < colors.length; j++) {
-				squares[j].style.background = squareColor;
-			}
+			gameMessage.textContent = "Correct!";
+			paintSquares(pickedColor);
+			pageHead.style.background = pickedColor;
+			newColorBtn.textContent = "Play again?"
 		} else {
 			gameMessage.textContent = "Try Again!";
 			this.style.background = "#232323";
 		}
 	});
+}
+
+newColorBtn.addEventListener("click", function() {
+	resetGame();
+});
+
+easyModeBtn.addEventListener("click", function() {
+	easyMode = true;
+	if(this.classList[0] != "selected") {
+		resetGame();
+	}
+	hardModeBtn.classList.remove("selected");
+	this.classList.add("selected");
+});
+
+hardModeBtn.addEventListener("click", function() {
+	easyMode = false;
+	if(this.classList[0] != "selected") {
+		resetGame();
+	}
+	this.classList.add("selected");
+	easyModeBtn.classList.remove("selected");
+});
+
+function resetGame() {
+	colors = generateColors();
+	pickedColor = pickRandomColor();
+	paintSquares();
+	pageHead.style.background = "steelblue";
+	newColorBtn.textContent = "new color";
+	gameMessage.textContent = "";
+	pickedColorText.textContent = pickedColor;
+}
+
+function paintSquares(color) {
+	for (var i = 0; i < colors.length; i++) {
+		if (color != undefined) {
+			squares[i].style.background = color;
+		} else {
+			squares[i].style.background = colors[i];
+		}
+	}
 }
 
 function generateRandomColor() {

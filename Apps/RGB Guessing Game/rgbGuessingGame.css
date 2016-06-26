@@ -1,43 +1,35 @@
 body {
 	background-color: #232323;
-	font-family: 'Cabin', sans-serif;
+	font-family: 'Montserrat', sans-serif;
+	margin: 0;
 }
 
 .game-menu {
 	background: white;
-	padding-left: 26%;
-	padding-right: 26%;
-	margin: 0 auto;
-	height: 60px;
-	color: rgb(110, 110, 240);
-	font-size: 18px;
-}
-
-.menu-item {
-	float: left;
-	text-transform: uppercase;
-}
-
-.menu-left {
-	width: 50%;
-}
-
-.menu-center {
-	width: 50%;
-	margin: 0 25%;
 	text-align: center;
+	height: 30px;
+	margin-bottom: 15px;
 }
 
-.menu-right {
-	width: 50%;
-	text-align: right;
+button {
+	color: steelblue;
+	background: white;
+	border: none;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: 1.1px;
+	height: 100%;
+	font-family: 'Montserrat', sans-serif;
+	transition: all 0.3s;
 }
 
-.menu-section {
-	padding-top: 2px;
-	padding-bottom: 2px;
-	width: 33%;
-	float: left;
+button:hover {
+	background: steelblue;
+	color: white;
+}
+
+#game-message {
+	width: 15%;
 }
 
 .square {
@@ -47,6 +39,7 @@ body {
 	padding-top: 30%;
 	float: left;
 	border-radius: 18px;
+	transition: all 0.5s;
 }
 
 #container {
@@ -55,25 +48,20 @@ body {
 }
 
 .selected {
-	background: background: rgb(110, 110, 240);
+	background:steelblue;
 	color: white;
 }
 
-#page-head {
+.page-head {
 	text-transform: uppercase;
-	font-size: 28px;
-	background: rgb(110, 110, 240);
+	font-weight: normal;
+	font-size: 200%;
+	background: steelblue;
 	color: white;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-
-.head-text {
-	margin: 0 auto;
 	text-align: center;
-	width: 50%;
+	margin: 0;
+	line-height: 50px;
+	transition: background 0.5s;
 }
 
 .right-color {

@@ -3,35 +3,21 @@
 <head>
 	<title>The RGB Guessing Game</title>
 	<link rel="stylesheet" type="text/css" href="rgbGuessingGame.css">
-	<link href='https://fonts.googleapis.com/css?family=Cabin:400,600' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-<div id="page-head">
-	<p class="head-text">the great</p>
-	<p class="head-text right-color">COLOR</p>
-	<p class="head-text">guessing game</p>
-</div>
+<h1 class="page-head">
+	the great <br>
+	<span class="right-color">msg</span> <br>
+	guessing game
+</h1>
 
 <div class="game-menu">
-	<div class="menu-section left-section">
-		<div class="new-color">
-			<p>new color</p>
-		</div>
-	</div>
-	<div class="menu-section mid-section">
-		<div class="message">
-			<p id="game-message"></p>
-		</div>
-	</div>
-	<div class="menu-section right-section">
-		<div class="easy-mode">
-			<p>easy</p>
-		</div>
-		<div class="hard-mode">
-			<p>hard</p>
-		</div>
-	</div>
+	<button id="new-color">new color</button>
+	<span id="game-message"></span>
+	<button id="easy-mode">easy</button>
+	<button class="selected" id="hard-mode">hard</button>
 </div>
 
 <div id="container">
