@@ -69,6 +69,10 @@ function paintSquares(color) {
 		} else {
 			squares[i].style.background = colors[i];
 		}
+		squares[i].style.display = "block";
+		if (easyMode) {
+			squares[i + 3].style.display = "none";
+		}
 	}
 }
 
