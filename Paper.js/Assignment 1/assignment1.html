@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Paper.js Assignment 1</title>
+	<link rel="stylesheet" type="text/css" href="assignment1.css">
+	<script type="text/javascript" src="paper-full.js"></script>
+	<script type="text/paperscript" canvas="circleGrid">
+		for(var i = 0.5; i < 10; i++) {
+			for(var j = 0.5; j < 10; j++) {
+				new Path.Circle(new Point(j*100, i*100), 10).fillColor = "rgb(" + Math.floor(i*25) + ", " + Math.floor(j*25) + ", " + Math.floor(((i + j)/2) * 25) + ")";
+			}
+		}
+	</script>
+</head>
+<body>
+<canvas id="circleGrid" resize></canvas>
+</body>
+</html>
