@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Todo List</title>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="assets/css/todos.css">
 	<script src="https://use.fontawesome.com/b292642dcb.js"></script>
 	<script type="text/javascript" src="assets/js/lib/jquery-2.2.4.min.js"></script>
@@ -9,13 +10,9 @@
 <body>
 
 <div id="container">
-	<h1>to-do list</h1>
-	<input type="text">
+	<h1>to-do list <i id="show-hide-input" class="fa fa-plus" aria-hidden="true"></i></h1>
+	<input id="todo-input" type="text" placeholder="Add New Todo">
 	<ul>
-		<li><span><i class="fa fa-trash" aria-hidden="true"></i></span>TODO 1</li>
-		<li><span><i class="fa fa-trash" aria-hidden="true"></i></span>TODO 2</li>
-		<li><span><i class="fa fa-trash" aria-hidden="true"></i></span>TODO 3</li>
-		<li><span><i class="fa fa-trash" aria-hidden="true"></i></span>TODO 4</li>
 	</ul>
 </div>
 
