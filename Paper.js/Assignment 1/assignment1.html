@@ -9,11 +9,15 @@
 			var r = Math.floor(Math.random()*255);
 			var g = Math.floor(Math.random()*255);
 			var b = Math.floor(Math.random()*255);
-			
-		}
-		for(var i = 0.5; i < 10; i++) {
-			for(var j = 0.5; j < 10; j++) {
-				new Path.Circle(new Point(j*100, i*100), 10).fillColor = "rgb(" + Math.floor(i*25) + ", " + Math.floor(j*25) + ", " + Math.floor(((i + j)/2) * 25) + ")";
+			var maxPoint = new Point(view.size.width, view.size.height);
+			var randomPoint = Point.random();
+			var point = randomPoint * maxPoint;
+			var size = Math.floor(Math.random() * 100);
+
+			var circle = new Path.Circle(point, size).fillColor = "rgb(" + r + ", " + g + ", " + b + ")";
+
+			function onFrame(event) {
+				circle.fillColor.hue += 1;
 			}
 		}
 	</script>
