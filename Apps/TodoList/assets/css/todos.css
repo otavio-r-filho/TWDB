@@ -1,0 +1,19 @@
+.completed {
+	color: gray;
+	text-decoration: line-through;
+}
+#container {
+	background: #f7f7f7;
+	width: 25%;
+	margin: 200px auto;
+}
+
+h1 {
+	background: #2980b9;
+	color: white;
+	padding: 15px;
+}
+
+ul {
+
+}
