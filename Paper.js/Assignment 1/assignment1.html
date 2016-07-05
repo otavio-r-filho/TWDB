@@ -5,6 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="assignment1.css">
 	<script type="text/javascript" src="paper-full.js"></script>
 	<script type="text/paperscript" canvas="circleGrid">
+		var circles = [];
 		function onKeyDown(event) {
 			var r = Math.floor(Math.random()*255);
 			var g = Math.floor(Math.random()*255);
@@ -12,12 +13,15 @@
 			var maxPoint = new Point(view.size.width, view.size.height);
 			var randomPoint = Point.random();
 			var point = randomPoint * maxPoint;
-			var size = Math.floor(Math.random() * 100);
-
-			var circle = new Path.Circle(point, size).fillColor = "rgb(" + r + ", " + g + ", " + b + ")";
-
-			function onFrame(event) {
-				circle.fillColor.hue += 1;
+			var size = Math.floor(Math.random() * 200);
+			circle = new Path.Circle(point, size);
+			circle.fillColor = "rgb(" + r + ", " + g + ", " + b + ")";
+			circles.push(circle);
+		}
+		function onFrame(event) {
+			for(var i = 0; i < circles.length; i++) {
+				circles[i].fillColor.hue += 2;
+				circles[i].scale(0.94);
 			}
 		}
 	</script>
