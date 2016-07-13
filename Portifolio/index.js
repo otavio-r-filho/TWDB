@@ -10,6 +10,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.set("view engine", "ejs");
 
+var headIncludes = portifolio.addCSS("/css/bootstrap.css") + 
+						 portifolio.addCSS("/css/bootstrap-theme.css") + 
+						 portifolio.addCSS("/css/bootstrap-submenu.css") + 
+						 portifolio.addCSS("/css/index.css") + 
+						 portifolio.addCSS("/css/font-awesome.css") +
+						 portifolio.addScript("/js/lib/jquery-2.2.4.js") + 
+						 portifolio.addScript("/js/lib/bootstrap.js") + 
+						 portifolio.addScript("/js/lib/bootstrap-submenu.js");
+
 //End of environmen settup
 
 //App routing
@@ -22,11 +31,10 @@ app.get("/", function(req, res) {
 app.get("/index", function(req, res) {
 	console.log("Serving GET request for " + req.ip + " on page \"/index\"");
 	res.render("index", {
-		pageTittle: "This is a silly test",
-		headIncludes: portifolio.addCSS("/css/bootstrap.css") + portifolio.addCSS("/css/index.css") + portifolio.addScript("/js/lib/jquery-2.2.4.js") + portifolio.addScript("/js/bootstrap.js"),
+		pageTittle: "Otavio VR Portifolio",
+		headIncludes: headIncludes,
 		bodyTopIncludes: "",
-		pageExplanation: "This is working! I can't believe!",
-		bodyBottomIncludes: ""
+		bodyBottomIncludes: portifolio.addScript("/js/enableSubmenu.js")
 	});
 });
 
