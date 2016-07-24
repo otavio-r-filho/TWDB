@@ -1,0 +1,18 @@
+<% include partials/header %>
+
+<h1>Testing camp page</h1>
+
+<% if(campgrounds.length > 0) {
+		for(var i = 0; i < campgrounds.length; i++) { %>
+			<table>
+				<thead>
+					<tr>
+						<td>Camp name</td>
+						<td>Camp image</td>
+					</tr>
+				</thead>
+			</table>
+		%< }
+} %>
+
+<% include partials/footer %>
