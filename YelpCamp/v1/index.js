@@ -30,6 +30,7 @@ app.get("/", function(req, res) {
 	console.log("Serving GET request for " + req.ip + " on page \"/\"");
 	res.render("index", {
 		pageTittle: "Yelp Camp", 
+		preScripts: [],
 		links: ["css/index.css"]
 	});
 });
@@ -48,6 +49,7 @@ app.get("/campgrounds", function(req, res) {
 		} else {
 				res.render("campgrounds", {
 					pageTittle: "Yelp Camp - Camp Grounds",
+					preScripts: ["js/campgrounds.js"],
 					links: ["css/campgrounds.css"],
 					campgrounds: camps
 				});
@@ -81,6 +83,7 @@ app.get("/campgrounds/new", function(req, res) {
 	console.log("Serving GET request for " + req.ip + " on page \"/campgrounds/new\"");
 	res.render("new", {
 		pageTittle: "Yelp Camp - Add New Camp",
+		preScripts: [],
 		links: ["../css/new.css"]
 	});
 });
