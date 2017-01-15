@@ -6,9 +6,9 @@
 			<h1>Welcome to YelpCamp!</h1>
 			<p>View our hand picked camp grounds from all over the world</p>
 			<p>
-				<a class="btn btn-primary btn-default" href="/campgrounds/new">Add a new campground</a>
+				<a class="btn btn-primary btn-default" href="/new">Add a new campground</a>
 			</p>
-			<button type="button" id="delete-button" class="btn btn-warning btn-default" onclick="deleteCamps();">Delete campground(s)</button>
+			<button type="button" id="delete-button" class="btn btn-default disabled" onclick="deleteCamps();">Delete campground(s)</button>
 		</div>
 	</header>
 	
@@ -19,6 +19,7 @@
 					<img src="<%= campgrounds[i].img %>">
 					<div class="caption">
 						<input type="checkbox" onchange="prepareDelete();" class="checkbox delete-check"> <%= campgrounds[i].name %>
+						<div class="campId" style="visibility: hidden; position: absolute;"><%=campgrounds[i].id%></div>
 					</div>
 				</div>
 			</div>

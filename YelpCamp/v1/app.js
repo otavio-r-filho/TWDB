@@ -76,6 +76,8 @@ app.post("/", function(req, res){
 
 app.delete("/", function(req, res) {
 	console.log("Serving DELETE request for " + req.ip + " on page \"/\"");
+
+	
 });
 
 app.get("/new", function(req, res) {
