@@ -26,39 +26,34 @@ var Campground = mongoose.model('Campground', {
 // App routing
 //---------------------------------------------------------
 
+// app.get("/", function(req, res) {
+// 	console.log("Serving GET request for " + req.ip + " on page \"/\"");
+// 	res.render("index", {
+// 		pageTittle: "Yelp Camp", 
+// 		preScripts: [],
+// 		links: ["css/index.css"]
+// 	});
+// });
+
 app.get("/", function(req, res) {
 	console.log("Serving GET request for " + req.ip + " on page \"/\"");
-	res.render("index", {
-		pageTittle: "Yelp Camp", 
-		preScripts: [],
-		links: ["css/index.css"]
-	});
-});
-
-app.get("/campgrounds", function(req, res) {
-	console.log("Serving GET request for " + req.ip + " on page \"/campgrounds\"");
-	// res.render("campgrounds", {
-	// 	pageTittle: "Yelp Camp - Camp Grounds",
-	// 	links: ["css/campgrounds.css"],
-	// 	campgrounds: campgrounds
-	// });
 
 	Campground.find(function(error, camps) {
 		if(error) {
 			console.log("Could't retrieve any campgrounds");
 		} else {
-				res.render("campgrounds", {
+				res.render("index", {
 					pageTittle: "Yelp Camp - Camp Grounds",
-					preScripts: ["js/campgrounds.js"],
-					links: ["css/campgrounds.css"],
+					preScripts: ["js/index.js"],
+					links: ["css/index.css"],
 					campgrounds: camps
 				});
 		}
 	});
 });
 
-app.post("/campgrounds", function(req, res){
-	console.log("Serving POST request for " + req.ip + " on page \"/campgrounds\"");
+app.post("/", function(req, res){
+	console.log("Serving POST request for " + req.ip + " on page \"/\"");
 
 	if(req.body.name.length > 0 && req.body.img.length > 0) { 
 		var newCamp = new Campground({
@@ -76,11 +71,15 @@ app.post("/campgrounds", function(req, res){
 		});
 	}
 	
-	res.redirect("campgrounds");
+	res.redirect("/");
 });
 
-app.get("/campgrounds/new", function(req, res) {
-	console.log("Serving GET request for " + req.ip + " on page \"/campgrounds/new\"");
+app.delete("/", function(req, res) {
+	console.log("Serving DELETE request for " + req.ip + " on page \"/\"");
+});
+
+app.get("/new", function(req, res) {
+	console.log("Serving GET request for " + req.ip + " on page \"/new\"");
 	res.render("new", {
 		pageTittle: "Yelp Camp - Add New Camp",
 		preScripts: [],
