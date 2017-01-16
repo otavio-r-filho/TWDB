@@ -77,7 +77,25 @@ app.post("/", function(req, res){
 app.delete("/", function(req, res) {
 	console.log("Serving DELETE request for " + req.ip + " on page \"/\"");
 
-	
+	console.log(req.body.ids[0]);
+
+	for(var i = 0; i < req.body.ids.length; i++) {
+		Campground.findByIdAndRemove(req.body.ids[i], function(err, id) {
+			if(err) {
+				console.log("Something went wrong:" + err);
+			} else {
+				console.log("Item with id=" + id + " successfuly deleted.");
+			}
+		});
+	}
+
+	res.render("index", {
+					pageTittle: "Yelp Camp - Camp Grounds",
+					preScripts: ["js/index.js"],
+					links: ["css/index.css"],
+					campgrounds: camps
+				});	
+
 });
 
 app.get("/new", function(req, res) {

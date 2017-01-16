@@ -19,7 +19,18 @@ function prepareDelete() {
 
 function deleteCamps() {
 	if(hasChecked) {
-		var checkedCamps = $(".campId").textContent;
-		console.log(checkedCamps);
+		var checkedCamps = $(".delete-check:checked + .campId");
+		var campIds = [];
+		for(var i = 0; i < checkedCamps.length; i++) {
+			campIds.push(checkedCamps[i].textContent);
+		}
+		
+		$.ajax({
+			url: "/",
+			type: "DELETE",
+			data: {ids: campIds},
+			success: $.noop,
+			error: $.nopp
+		});
 	}
 }
